@@ -18,6 +18,7 @@ pipeline {
     }
     post {
         always {
+             archiveArtifacts artifacts: 'target/karate-reports/**/*.*', fingerprint: true
             junit '**/target/surefire-reports/*.xml'
         }
     }
